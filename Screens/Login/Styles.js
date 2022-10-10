@@ -19,6 +19,9 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderColor:'#FF9B07',
         borderRadius: 10,
+        fontSize: 18,
+        color:'black',
+        fontFamily:'SegoeItalic'
     },
     button:{
         width: 300,

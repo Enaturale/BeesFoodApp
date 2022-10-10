@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { View, Text, TextInput, Pressable, Image, ImageBackground } from 'react-native';
 import styles from './Styles';
 
@@ -8,7 +8,10 @@ import {getAuth, createUserEmailAndPassword, signInWithEmailAndPassword} from 'f
 import {initializeApp} from 'firebase/app'
 import { firebaseConfig } from '../../firebase-config';
 
-const  background = {}
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { getReactNativePersistence } from 'firebase/auth/react-native';
+
+// const  background = {}
 
 
 
@@ -18,7 +21,7 @@ const Login = ({navigation}) => {
     const [password, setPassword] = useState('')
 
     const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+    const auth = getAuth(app  );
 
     const signInUser =() => {
         signInWithEmailAndPassword(auth, email, password)
@@ -32,11 +35,20 @@ const Login = ({navigation}) => {
         })
     }
 
+    useEffect(()=> {
+        const unsubscribe = auth.onAuthStateChanged((user) => {
+           if (user){
+             navigation.navigate('dashboard');
+           }
+     
+         })
+         return unsubscribe
+       }, [])
+
     const [fontsLoaded] = useFonts({
         SegoeUI: require("../../assets/fonts/Nunito-Black.ttf"),
         Segoe: require('../../assets/fonts/Nunito-ExtraBold.ttf'),
         SegoeItalic: require('../../assets/fonts/Nunito-MediumItalic.ttf'),
-
     })
 
     if (!fontsLoaded) return null
@@ -104,7 +116,7 @@ const Login = ({navigation}) => {
             </View>
 
             <View style={{ marginTop: 30, alignContent: 'center', justifyContent: 'center', alignItems: 'center' }}>
-                <Pressable style={styles.button}  onPress={signInUser}> 
+                <Pressable style={styles.button} onPress={signInUser}  > 
                     <Text style={{ fontFamily: 'SegoeUI', fontSize: 25, color: "#FF9B07" }}>Login</Text>
                 </Pressable>
             </View>            

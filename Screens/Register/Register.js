@@ -94,7 +94,7 @@ const Register = ({navigation}) => {
             </View>
 
             <View style={{ marginTop: 30, alignContent: 'center', justifyContent: 'center', alignItems: 'center' }}>
-                <Pressable style={styles.button} onPress={createUserAccount}>
+                <Pressable style={styles.button} onPress={createUserAccount} >
                     <Text style={{ fontFamily: 'SegoeUI', fontSize: 25, color: "#FF9B07" }}>Register</Text>
                 </Pressable>
             </View> 
