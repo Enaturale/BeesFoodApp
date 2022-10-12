@@ -1,0 +1,64 @@
+import React from 'react';
+
+import { View, Text, Pressable, SafeAreaView } from 'react-native';
+import categoriesStyle from './categoriesStyle';
+
+import Carousel from 'react-native-snap-carousel';
+import CategoriesCarousel from './CategoriesCarousel';
+import FontsPage from '../FontsPage/FontsPage';
+
+const data = [
+    {
+        id: '1',
+        image: 'https://cdn.pixabay.com/photo/2021/08/21/23/55/pizza-6563825__340.png',
+        title: 'Pizza'
+    },
+    {
+        id: '2',
+        image: 'https://cdn.pixabay.com/photo/2020/10/22/08/56/donut-5675340__340.png',
+        title: 'Snacks',
+    },
+    {
+        id: '3',
+        image: 'https://cdn.pixabay.com/photo/2021/05/14/23/35/breakfast-6254633__340.png',
+        title: 'Salads',
+    },
+    {
+        id: '4',
+        image: 'https://cdn.pixabay.com/photo/2021/05/23/22/27/sandwich-6277424__340.png',
+        title: 'Light',
+    },
+    {
+        id: '5',
+        image: 'https://cdn.pixabay.com/photo/2012/04/14/14/29/wine-34125__340.png',
+        title: 'Drinks',
+    }
+
+]
+
+const SLIDER_WIDTH = 320;
+const ITEM_WIDTH = 80;
+
+export default function Categories() {
+
+    <FontsPage />
+  const isCarousel = React.useRef(null)
+
+  
+
+    return (
+        <SafeAreaView style={categoriesStyle.container}>
+            <Text style={categoriesStyle.title}>Categories</Text>
+            <Carousel
+                layout='default'
+                ref={isCarousel}
+                data={data}
+                renderItem={CategoriesCarousel}
+                useScrollView={true}
+                hasParallaxImages={true}
+                sliderWidth={SLIDER_WIDTH}
+                itemWidth={ITEM_WIDTH}
+            />
+        </SafeAreaView>
+    )
+}

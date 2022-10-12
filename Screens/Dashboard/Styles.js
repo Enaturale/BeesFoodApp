@@ -6,8 +6,8 @@ const DashStyle = StyleSheet.create({
         marginHorizontal: 20,
     },
     title:{
-        fontSize: 20,
-        marginTop: 40,
+        fontSize: 25,
+        marginTop: 20,
         fontFamily:'SegoeUI'
     },
 
