@@ -23,7 +23,9 @@ const Styles = StyleSheet.create({
         borderWidth:2,
         borderRadius: 15,
         borderColor:'black',
-        justifyContent:'center'
+        justifyContent:'center',
+        marginBottom: 10,
+        
     },
     search:{
         marginHorizontal:20,

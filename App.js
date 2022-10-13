@@ -9,6 +9,8 @@ import Dashboard from './Screens/Dashboard/Dashboard';
 
 const Stack = createNativeStackNavigator();
 
+import BottomTab from './Navigation/BottomTab'
+
 export default function App() {
   return (
     <NavigationContainer>
@@ -16,7 +18,7 @@ export default function App() {
         <Stack.Screen name="onboarding"  component={Onboarding} options={{headerShown: false}} />
         <Stack.Screen name="login"  component={Login} options={{headerShown: false}} />
         <Stack.Screen name="register"  component={Register} options={{headerShown: false}} />
-        <Stack.Screen name="dashboard"  component={Dashboard} options={{headerShown: false}} />
+        <Stack.Screen name="dashboard"  component={BottomTab} options={{headerShown: false}} />
 
 
       </Stack.Navigator>

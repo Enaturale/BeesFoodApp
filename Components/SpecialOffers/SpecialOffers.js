@@ -9,6 +9,8 @@ import FontsPage from '../FontsPage/FontsPage';
 
 import SpecialOffersCarousel from './SpecialOffersCarousel';
 
+import SpecialStyles from './SpecialStyles';
+
 const data = [
     {
         id: '1',
@@ -48,7 +50,7 @@ const data = [
 ]
 
 const SLIDER_WIDTH = 320;
-const ITEM_WIDTH = 100;
+const ITEM_WIDTH = 160;
 
 export default function SpecialOffers() {
 
@@ -59,7 +61,7 @@ export default function SpecialOffers() {
 
     return (
         <SafeAreaView >
-            <Text>Special Offers</Text>
+            <Text style={SpecialStyles.mainTitle}>Special Offers</Text>
             <Carousel
                 layout='default'
                 ref={isCarousel}

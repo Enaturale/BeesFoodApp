@@ -5,7 +5,7 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 export default function Header() {
     return (
-        <View style={{marginTop: 15, flexDirection:'row', justifyContent:'space-between', width: 340,}}>
+        <View style={{marginTop: 27, flexDirection:'row', justifyContent:'space-between', width: 340,}}>
             <View >
                 <Pressable style={Styles.pressable}>
                     <MaterialIcons name="menu" size={40} color='#FF9B07' />

@@ -34,7 +34,7 @@ function Dashboard() {
         <Text style={DashStyle.title}>Hey, Welcome Back. </Text>
       </View>
 
-      <Text style={{fontFamily:'SegoeItalic', fontSize: 16,}}>Want something new?</Text>
+      <Text style={{fontFamily:'SegoeItalic', fontSize: 16, marginVertical: 5,}}>Want something new?</Text>
 
       <Searchbar />
 

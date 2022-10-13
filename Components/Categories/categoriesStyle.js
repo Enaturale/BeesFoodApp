@@ -23,8 +23,9 @@ const categoriesStyle = StyleSheet.create({
        
     },
     title:{
-        fontSize: 15,
-        fontFamily:'Segoe'
+        fontSize: 20,
+        fontFamily:'Segoe',
+        
     },
 
 })
