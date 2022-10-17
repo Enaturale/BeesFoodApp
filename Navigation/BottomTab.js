@@ -30,7 +30,7 @@ function CartScreen() {
         <Stack.Navigator>
             <Stack.Screen name="CartPage" component={Cart} options={{ headerShown: false }} />
             <Stack.Screen name='welcomepage' component={Dashboard} options={{ headerShown: false }} />
-            <Stack.Screen name='profilePage' component={Profile} options={{ headerShown: false }} />
+            <Stack.Screen name='profileage' component={Profile} options={{ headerShown: false }} />
 
         </Stack.Navigator>
     )

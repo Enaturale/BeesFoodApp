@@ -2,8 +2,12 @@ import React from 'react';
 
 import { View, Text, Pressable, StyleSheet } from 'react-native';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-
-export default function Header() {
+import { useNavigation } from '@react-navigation/native';
+const Header = ( ) => {
+    const navigation = useNavigation();
+    const gotoProfile = () =>{
+        return navigation.navigate('Profile')
+    }
     return (
         <View style={{marginTop: 27, flexDirection:'row', justifyContent:'space-between', width: 340,}}>
             <View >
@@ -13,7 +17,7 @@ export default function Header() {
             </View>
 
             <View>
-                <Pressable style={Styles.pressable}>
+                <Pressable style={Styles.pressable} onPress={gotoProfile}>
                     <MaterialIcons name="person" size={40} color='#FF9B07' />
                 </Pressable>              
 
@@ -36,3 +40,5 @@ const Styles = StyleSheet.create({
         alignItems:'center'
     }
 })
+
+export default Header;
