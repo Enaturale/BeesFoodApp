@@ -37,11 +37,11 @@ const Header = ( ) => {
     }
     return (
         <View style={{marginTop: 27, flexDirection:'row', justifyContent:'space-between', width: 340,}}>
-            {/* <View >
+             <View >
                 <Pressable style={Styles.pressable} >
                     <MaterialIcons name="menu" size={40} color='#FF9B07' />
                 </Pressable>
-            </View> */}
+            </View> 
 
             <View>
                 <Pressable style={Styles.pressable} onPress={gotoProfile}>
