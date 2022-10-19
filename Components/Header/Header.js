@@ -30,7 +30,7 @@ import { useNavigation } from '@react-navigation/native';
 //     )
 // }
 
-const Header = ( ) => {
+const Header = (props ) => {
     const navigation = useNavigation();
     const gotoProfile = () =>{
         return navigation.navigate('Profile')
@@ -38,10 +38,10 @@ const Header = ( ) => {
     return (
         <View style={{marginTop: 27, flexDirection:'row', justifyContent:'space-between', width: 340,}}>
              <View >
-                <Pressable style={Styles.pressable} >
+                <Pressable style={Styles.pressable} onPress={(props) =>navigation.openDrawer() }>
                     <MaterialIcons name="menu" size={40} color='#FF9B07' />
                 </Pressable>
-            </View> 
+            </View>    
 
             <View>
                 <Pressable style={Styles.pressable} onPress={gotoProfile}>
