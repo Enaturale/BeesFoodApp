@@ -27,7 +27,8 @@ function Dashboard() {
 <FontsPage />
 
   return (
-    <View style={DashStyle.container}>
+    <View style={{  marginVertical: 50,
+      marginHorizontal: 20,}}>
       <Header />
 
       <View>

@@ -10,9 +10,14 @@ import Dashboard from './Screens/Dashboard/Dashboard';
 import Profile from './Screens/Profile/Profile';
 import Cart from './Screens/Cart/Cart'
 
+import Test from './Screens/Test/Test';
+
 const Stack = createNativeStackNavigator();
 
 import BottomTab from './Navigation/BottomTab'
+import DrawerTab from './Navigation/DrawerTab';
+
+import 'react-native-gesture-handler'
 
 export default function App() {
   return (
@@ -21,9 +26,11 @@ export default function App() {
         <Stack.Screen name="onboarding"  component={Onboarding} options={{headerShown: false}} />
         <Stack.Screen name="login"  component={Login} options={{headerShown: false}} />
         <Stack.Screen name="register"  component={Register} options={{headerShown: false}} />
-        <Stack.Screen name="dashboard"  component={BottomTab} options={{headerShown: false}} />
+        <Stack.Screen name="dashboard"  component={DrawerTab} options={{headerShown: false}} />
         <Stack.Screen name="ProfilePae"  component={Profile} options={{headerShown: false}} />
         <Stack.Screen name="Cartpage"  component={Cart} options={{headerShown: false}} />
+        <Stack.Screen name="Test"  component={Test} />
+
 
 
 

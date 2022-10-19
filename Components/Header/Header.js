@@ -3,7 +3,6 @@ import React from 'react';
 import { View, Text, Pressable, StyleSheet } from 'react-native';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { useNavigation } from '@react-navigation/native';
-
 // import {createDrawerNavigator} from "@react-navigation/drawer"
 // // import {createAppContainer} from '@react-navigation'
 
@@ -20,14 +19,13 @@ import { useNavigation } from '@react-navigation/native';
 //     Cart,
 //     CategoriesPage
 // });
-
+// const Drawer = createDrawerNavigator();
 // const DrawerTab = () => {
 //     return(
 //         <Drawer.Navigator>
 //             <Drawer.Screen name="Categ"  component={CategoriesPage} />
 //             <Drawer.Screen name="Cartio" component={Cart} />
 //             <Drawer.Screen name="prof" component={Profile}/>
-
 //         </Drawer.Navigator>
 //     )
 // }
@@ -39,11 +37,11 @@ const Header = ( ) => {
     }
     return (
         <View style={{marginTop: 27, flexDirection:'row', justifyContent:'space-between', width: 340,}}>
-            <View >
+            {/* <View >
                 <Pressable style={Styles.pressable} >
                     <MaterialIcons name="menu" size={40} color='#FF9B07' />
                 </Pressable>
-            </View>
+            </View> */}
 
             <View>
                 <Pressable style={Styles.pressable} onPress={gotoProfile}>

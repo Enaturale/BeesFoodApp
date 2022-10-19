@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { View, Text, TextInput, Pressable, Image, ImageBackground } from 'react-native';
+import { View, Text, TextInput, Pressable, Image, ImageBackground , Modal} from 'react-native';
 import styles from './Styles';
 
 import { useFonts } from 'expo-font';
@@ -26,7 +26,7 @@ const Login = ({navigation}) => {
     const signInUser =() => {
         signInWithEmailAndPassword(auth, email, password)
         .then(() => {
-            console.log('USer Created');
+            console.log('User Found');
             alert("Welcome back " + email)
             navigation.navigate('dashboard');
 
