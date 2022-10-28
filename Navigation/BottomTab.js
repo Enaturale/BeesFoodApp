@@ -9,6 +9,7 @@ const Tab = createBottomTabNavigator();
 import Dashboard from '../Screens/Dashboard/Dashboard';
 import Cart from '../Screens/Cart/Cart';
 import Profile from '../Screens/Profile/Profile';
+import Menu from '../Screens/Menu/Menu';
 
 import FontsPage from '../Components/FontsPage/FontsPage';
 
@@ -18,17 +19,17 @@ function DashboardScreen() {
     return (
         <Stack.Navigator>
             <Stack.Screen name="Dash" component={Dashboard} options={{ headerShown: false }} />
-            <Stack.Screen name='Carted' component={Cart} options={{ headerShown: false }} />
+            <Stack.Screen name='menufood' component={Menu} options={{ headerShown: false }} />
             <Stack.Screen name='Profiled' component={Profile} options={{ headerShown: false }} />
 
         </Stack.Navigator>
     )
 }
 
-function CartScreen() {
+function MenuScreen() {
     return (
         <Stack.Navigator>
-            <Stack.Screen name="CartPage" component={Cart} options={{ headerShown: false }} />
+            <Stack.Screen name="MenuPage" component={Menu} options={{ headerShown: false }} />
             <Stack.Screen name='welcomepage' component={Dashboard} options={{ headerShown: false }} />
             <Stack.Screen name='profileage' component={Profile} options={{ headerShown: false }} />
 
@@ -41,7 +42,7 @@ function ProfileScreen() {
         <Stack.Navigator>
             <Stack.Screen name="ProfilePage" component={Profile} options={{ headerShown: false }} />
             <Stack.Screen name='welcompage' component={Dashboard} options={{ headerShown: false }} />
-            <Stack.Screen name='Carte' component={Cart} options={{ headerShown: false }} />
+            <Stack.Screen name='Menus' component={Menu} options={{ headerShown: false }} />
 
         </Stack.Navigator>
     )
@@ -83,13 +84,13 @@ export default function BottomTab() {
                 }}
             />
             <Tab.Screen
-                name="Cart"
-                component={CartScreen}
+                name="Menu"
+                component={MenuScreen}
                 options={{
                     headerShown: false,
                     tabBarIcon: ({ focused }) => (
                         <MaterialIcons
-                            name='shopping-cart'
+                            name='restaurant-menu'
                             size={23}
                             color={focused ? '#FF9B07' : 'white'}
                             style={{ marginTop: 15, fontFamily: 'Segoe' }}

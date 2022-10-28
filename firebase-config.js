@@ -9,3 +9,12 @@ export const firebaseConfig = {
   measurementId: "G-WFQD7RWX1H"
 };
 
+
+// import AsyncStorage from '@react-native-community/async-storage';
+
+// const persistConfig = {
+//   timeout: 0,
+//   key: 'roott',
+//   storage: AsyncStorage,
+//   blacklist: []
+// };

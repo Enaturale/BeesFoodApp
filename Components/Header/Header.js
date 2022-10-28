@@ -3,37 +3,12 @@ import React from 'react';
 import { View, Text, Pressable, StyleSheet } from 'react-native';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { useNavigation } from '@react-navigation/native';
-// import {createDrawerNavigator} from "@react-navigation/drawer"
-// // import {createAppContainer} from '@react-navigation'
 
-// // import Profile from "../Screens/Profile/Profile";
-// // import Cart from "../Screens/Cart/Cart";
-// // import CategoriesPage from "../Screens/CategoriesPage/CategoriesPage";
-
-// import Profile from '../../Screens/Profile/Profile';
-// import Cart from '../../Screens/Cart/Cart';
-// import CategoriesPage from '../../Screens/CategoriesPage/CategoriesPage';
-
-// const Drawer = createDrawerNavigator({
-//     Profile,
-//     Cart,
-//     CategoriesPage
-// });
-// const Drawer = createDrawerNavigator();
-// const DrawerTab = () => {
-//     return(
-//         <Drawer.Navigator>
-//             <Drawer.Screen name="Categ"  component={CategoriesPage} />
-//             <Drawer.Screen name="Cartio" component={Cart} />
-//             <Drawer.Screen name="prof" component={Profile}/>
-//         </Drawer.Navigator>
-//     )
-// }
 
 const Header = (props ) => {
     const navigation = useNavigation();
     const gotoProfile = () =>{
-        return navigation.navigate('Profile')
+        return navigation.navigate('Cartpage')
     }
     return (
         <View style={{marginTop: 27, flexDirection:'row', justifyContent:'space-between', width: 340,}}>
@@ -45,7 +20,7 @@ const Header = (props ) => {
 
             <View>
                 <Pressable style={Styles.pressable} onPress={gotoProfile}>
-                    <MaterialIcons name="person" size={40} color='#FF9B07' />
+                    <MaterialIcons name="shopping-cart" size={40} color='#FF9B07' />
                 </Pressable>              
 
             </View>

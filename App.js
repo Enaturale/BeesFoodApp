@@ -8,7 +8,8 @@ import Login from './Screens/Login/Login';
 import Register from './Screens/Register/Register';
 import Dashboard from './Screens/Dashboard/Dashboard'; 
 import Profile from './Screens/Profile/Profile';
-import Cart from './Screens/Cart/Cart'
+import Cart from './Screens/Cart/Cart';
+import Menu from './Screens/Menu/Menu';
 
 import Test from './Screens/Test/Test';
 
@@ -28,7 +29,9 @@ export default function App() {
         <Stack.Screen name="register"  component={Register} options={{headerShown: false}} />
         <Stack.Screen name="dashboard"  component={DrawerTab} options={{headerShown: false}} />
         <Stack.Screen name="ProfilePae"  component={Profile} options={{headerShown: false}} />
-        <Stack.Screen name="Cartpage"  component={Cart} options={{headerShown: false}} />
+        <Stack.Screen name="Cartpage"  component={Cart} options={{headerShown: false}} />       
+        <Stack.Screen name="Menupage"  component={Menu} options={{headerShown: false}} />
+       
         <Stack.Screen name="Test"  component={Test} />
 
 

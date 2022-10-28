@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { View, Text, Pressable, SafeAreaView, Image } from 'react-native';
+import { View, Text, Pressable, SafeAreaView, Image, Alert } from 'react-native';
 
 import FontsPage from '../FontsPage/FontsPage';
 
@@ -10,6 +10,22 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 export default function SpecialOffersCarousel({ item, index }) {
     <FontsPage />
+    const AddtoCart = () => {
+        return(
+            Alert.alert("Add to Cart", item.title + ' has been added to cart', 
+            [
+                {
+                    text: 'OK',
+                },
+                {
+                    text:'Cancel',
+                    style:'cancel'
+                }
+                
+            ])
+        )
+
+    }
     return (
         <SafeAreaView style={SpecialStyles.container} >
             <Pressable style={SpecialStyles.pressable} >
@@ -28,7 +44,7 @@ export default function SpecialOffersCarousel({ item, index }) {
                         </Text>
                     </View>
                     <View>
-                        <Pressable>
+                        <Pressable onPress={AddtoCart}>
                             <MaterialIcons name='shopping-cart' color='#FF9B07' size={20} />
                         </Pressable>
                     </View>
