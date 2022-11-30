@@ -7,6 +7,9 @@ import Carousel from 'react-native-snap-carousel';
 import CategoriesCarousel from './CategoriesCarousel';
 import FontsPage from '../FontsPage/FontsPage';
 
+import { useNavigation } from '@react-navigation/native';
+
+
 const data = [
     {
         id: '1',
@@ -36,19 +39,31 @@ const data = [
 
 ]
 
-const SLIDER_WIDTH = 320;
-const ITEM_WIDTH = 80;
+const SLIDER_WIDTH = 340;
+const ITEM_WIDTH = 100;
 
 export default function Categories() {
+    const navigation = useNavigation();
 
     <FontsPage />
-  const isCarousel = React.useRef(null)
 
-  
+    const isCarousel = React.useRef(null)
+
+    const gotoCategoriesPage = () => {
+        navigation.navigate('CategoriesPage');
+    }
+
+
 
     return (
         <SafeAreaView style={categoriesStyle.container}>
-            <Text style={categoriesStyle.title}>Categories</Text>
+            <View style={{ flexDirection: 'row', width: 320, justifyContent: "space-between" }}>
+                <Text style={categoriesStyle.title}>Categories</Text>
+                <Pressable onPress={gotoCategoriesPage}>
+                    <Text style={{ fontFamily: 'SegoeItalic' }}>See all</Text>
+                </Pressable>
+            </View>
+
             <Carousel
                 layout='default'
                 ref={isCarousel}

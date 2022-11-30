@@ -8,8 +8,11 @@ import SpecialStyles from './SpecialStyles';
 
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
-export default function SpecialOffersCarousel({ item, index }) {
+
+export const SpecialOffersCarousel = ({ item, index, navigation }) =>{    
+
     <FontsPage />
+
     const AddtoCart = () => {
         return(
             Alert.alert("Add to Cart", item.title + ' has been added to cart', 
@@ -26,9 +29,12 @@ export default function SpecialOffersCarousel({ item, index }) {
         )
 
     }
+
+   
+
     return (
         <SafeAreaView style={SpecialStyles.container} >
-            <Pressable style={SpecialStyles.pressable} >
+            <Pressable style={SpecialStyles.pressable} onPress={(props) => navigation.navigate('SpecialPage')} >
                 <View style={{ alignItems: 'center', width: 150, }}>
                     <Text style={SpecialStyles.title}>{item.title}</Text>
                 </View>
@@ -44,7 +50,7 @@ export default function SpecialOffersCarousel({ item, index }) {
                         </Text>
                     </View>
                     <View>
-                        <Pressable onPress={AddtoCart}>
+                        <Pressable >
                             <MaterialIcons name='shopping-cart' color='#FF9B07' size={20} />
                         </Pressable>
                     </View>

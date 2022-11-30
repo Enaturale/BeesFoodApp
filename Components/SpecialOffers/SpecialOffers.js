@@ -7,7 +7,7 @@ import Carousel from 'react-native-snap-carousel';
 
 import FontsPage from '../FontsPage/FontsPage';
 
-import SpecialOffersCarousel from './SpecialOffersCarousel';
+import {SpecialOffersCarousel} from './SpecialOffersCarousel';
 
 import SpecialStyles from './SpecialStyles';
 
@@ -49,8 +49,8 @@ const data = [
 
 ]
 
-const SLIDER_WIDTH = 320;
-const ITEM_WIDTH = 160;
+const SLIDER_WIDTH = 340;
+const ITEM_WIDTH = 170;
 
 export default function SpecialOffers() {
 
@@ -60,7 +60,7 @@ export default function SpecialOffers() {
   
 
     return (
-        <SafeAreaView >
+        <SafeAreaView style={{marginTop: 20,}}>
             <Text style={SpecialStyles.mainTitle}>Special Offers</Text>
             <Carousel
                 layout='default'

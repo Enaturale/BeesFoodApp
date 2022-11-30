@@ -6,7 +6,7 @@ const SpecialStyles = StyleSheet.create({
         fontSize: 20,
     },
     container:{
-        marginLeft: -65,
+        marginLeft: -75,
         marginTop: 10,
         
     },

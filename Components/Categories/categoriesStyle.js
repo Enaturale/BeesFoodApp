@@ -6,12 +6,12 @@ const categoriesStyle = StyleSheet.create({
 
     },
     view:{
-        marginLeft: -110,
+        marginLeft: -115,
        
     },
     pressable:{
-        height: 80,
-        width: 80,
+        height: 100,
+        width: 100,
         borderColor:'black',
         borderWidth: 1,
         alignContent:'center',
