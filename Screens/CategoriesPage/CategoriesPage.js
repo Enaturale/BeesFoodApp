@@ -102,7 +102,6 @@ const CategoriesPage = ({ navigation }) => {
                     showsVerticalScrollIndicator={false}
                     showsHorizontalScrollIndicator={false}
                     // ListFooterComponent={() => <Text>End of List</Text>}
-
                 />
             </View>
 

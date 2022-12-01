@@ -1,15 +1,16 @@
 import React from 'react';
-import {Image,Pressable} from 'react-native'
+import { Image, Pressable, View, Text } from 'react-native'
 import logo from '../assets/images/beelogo.png'
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import Logout from "@expo/vector-icons/MaterialCommunityIcons"
 
 
 import Profile from "../Screens/Profile/Profile";
 import Cart from "../Screens/Cart/Cart";
 import CategoriesPage from "../Screens/CategoriesPage/CategoriesPage";
-
 import Dashboard from "../Screens/Dashboard/Dashboard";
+
 import BottomTab from "./BottomTab";
 // const Drawer = createDrawerNavigator({
 //     Profile,
@@ -17,7 +18,6 @@ import BottomTab from "./BottomTab";
 //     CategoriesPage
 // });
 const Drawer = createDrawerNavigator();
-
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +26,15 @@ import FontsPage from '../Components/FontsPage/FontsPage';
 
 //logo for drawer
 import { CustomerDrawer } from './CustomDrawer';
+
+import { useNavigation } from '@react-navigation/native';
+//signout function
+const SignOut = () => {
+    const navigation = useNavigation();
+    return navigation.navigate('login')
+
+}
+
 
 
 
@@ -82,23 +91,23 @@ const DrawerTab = () => {
                 headerShown: false,
                 drawerActiveBackgroundColor: 'black',
                 drawerActiveTintColor: '#FF9B07',
-                drawerLabelStyle:{
+                drawerLabelStyle: {
                     fontSize: 20,
-                    fontFamily:'Segoe',
+                    fontFamily: 'Segoe',
                     marginLeft: -20,
-                },               
-                
+                },
+
             }} >
             <Drawer.Screen
                 name="Welcome"
                 component={BottomTab}
                 options={{
                     drawerIcon: ({ focused }) => {
-                        return <MaterialIcons 
-                        name='home-filled'
-                         size={30} 
-                         color={focused ? '#FF9B07' : 'black'}
-                         />
+                        return <MaterialIcons
+                            name='home-filled'
+                            size={30}
+                            color={focused ? '#FF9B07' : 'black'}
+                        />
                     }
                 }}
             />
@@ -107,13 +116,13 @@ const DrawerTab = () => {
                 component={CategoriesScreen}
                 options={{
                     drawerIcon: ({ focused }) => {
-                        return <MaterialIcons 
-                        name='category' 
-                        size={20} 
-                        color={focused ? '#FF9B07' : 'black'}
-                         />
+                        return <MaterialIcons
+                            name='category'
+                            size={20}
+                            color={focused ? '#FF9B07' : 'black'}
+                        />
                     },
-                    drawerStyle:{
+                    drawerStyle: {
                         fontSize: 30,
                     }
                 }}
@@ -123,10 +132,10 @@ const DrawerTab = () => {
                 component={CartScreen}
                 options={{
                     drawerIcon: ({ focused }) => {
-                        return <MaterialIcons 
-                        name='shopping-cart' 
-                        size={30} 
-                        color={focused ? '#FF9B07' : 'black'}
+                        return <MaterialIcons
+                            name='shopping-cart'
+                            size={30}
+                            color={focused ? '#FF9B07' : 'black'}
                         />
                     }
                 }}
@@ -141,7 +150,22 @@ const DrawerTab = () => {
                             name='person-pin'
                             size={30}
                             color={focused ? '#FF9B07' : 'black'}
-                            />
+                        />
+                    }
+                }}
+
+            />
+
+            <Drawer.Screen
+                name="Logout"
+                component={SignOut}
+                options={{
+                    drawerIcon: ({ focused }) => {
+                        return <Logout
+                            name='logout'
+                            size={30}
+                            color={focused ? '#FF9B07' : 'black'}
+                        />
                     }
                 }}
 
