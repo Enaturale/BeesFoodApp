@@ -31,7 +31,8 @@ import { useNavigation } from '@react-navigation/native';
 //signout function
 const SignOut = () => {
     const navigation = useNavigation();
-    return navigation.navigate('login')
+    
+    navigation.navigate('login')
 
 }
 

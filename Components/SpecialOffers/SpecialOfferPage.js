@@ -5,7 +5,10 @@ import BackButton from '../BackButton/BackButton'
 import FontsPage from '../FontsPage/FontsPage';
 import { useNavigation } from '@react-navigation/native';
 
-export const SpecialOfferPage = () =>{
+
+
+
+export const SpecialOfferPage = ({item: dataitem}) =>{
     const navigation = useNavigation();
 
     <FontsPage />
@@ -19,7 +22,9 @@ export const SpecialOfferPage = () =>{
             <View>
                 <BackButton data={gotoBack}/>
                 <Text>Special Offer Page</Text>
-            </View>            
+            </View> 
+
+                    
         </View>
     )
 }

@@ -9,7 +9,7 @@ import SpecialStyles from './SpecialStyles';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 
-export const SpecialOffersCarousel = ({ item, index, navigation }) =>{    
+export const SpecialOffersCarousel = ({ item, index, navigation, onPress, title, image,price  }) =>{    
 
     <FontsPage />
 
@@ -34,19 +34,19 @@ export const SpecialOffersCarousel = ({ item, index, navigation }) =>{
 
     return (
         <SafeAreaView style={SpecialStyles.container} >
-            <Pressable style={SpecialStyles.pressable} onPress={(props) => navigation.navigate('SpecialPage')} >
+            <Pressable style={SpecialStyles.pressable} onPress={onPress} >
                 <View style={{ alignItems: 'center', width: 150, }}>
-                    <Text style={SpecialStyles.title}>{item.title}</Text>
+                    <Text style={SpecialStyles.title}>{title}</Text>
                 </View>
 
                 <View style={{ alignItems: 'center', width: 150, }}>
-                    <Image source={{ uri: item.image }} style={{ height: 50, width: 50, marginVertical: 15, }} />
+                    <Image source={{ uri: image }} style={{ height: 50, width: 50, marginVertical: 15, }} />
                 </View>
 
                 <View style={{ flexDirection: 'row', width: 130, justifyContent: 'space-between' }}>
                     <View>
                         <Text style={{ fontFamily: "SegoeItalic", fontSize: 15, color: '#FF9B07', marginLeft: 20, }}>
-                            ${item.price}
+                            ${price}
                         </Text>
                     </View>
                     <View>

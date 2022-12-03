@@ -13,6 +13,7 @@ import Menu from './Screens/Menu/Menu';
 import CategoriesPage from './Screens/CategoriesPage/CategoriesPage';
 import { SpecialOfferPage } from './Components/SpecialOffers/SpecialOfferPage';
 import CheckFullCategory from './Components/Categories/CheckFullCategory';
+import SpecialProductsDetails from './Components/SpecialOffers/SpecialProductsDetails';
 
 import Test from './Screens/Test/Test';
 
@@ -24,22 +25,27 @@ import DrawerTab from './Navigation/DrawerTab';
 
 import 'react-native-gesture-handler'
 
+import { CartProvider } from './Components/Cart/CartContext';
+
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="onboarding" component={Onboarding} options={{ headerShown: false }} />
-        <Stack.Screen name="login" component={Login} options={{ headerShown: false }} />
-        <Stack.Screen name="register" component={Register} options={{ headerShown: false }} />
-        <Stack.Screen name="dashboard" component={DrawerTab} options={{ headerShown: false }} />
-        <Stack.Screen name="ProfilePae" component={Profile} options={{ headerShown: false }} />
-        <Stack.Screen name="Cartpage" component={Cart} options={{ headerShown: false }} />
-        <Stack.Screen name="Menupage" component={Menu} options={{ headerShown: false }} />
-        <Stack.Screen name="CategoriesPage" component={CategoriesPage} options={{ headerShown: false }} />
-        <Stack.Screen name="SpecialPage" component={SpecialOfferPage} options={{ headerShown: false }} />
-        <Stack.Screen name='CheckFullCategory' component={CheckFullCategory} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <CartProvider>
+      <NavigationContainer>
+        <Stack.Navigator >
+          <Stack.Screen name="onboarding" component={Onboarding} options={{ headerShown: false }} />
+          <Stack.Screen name="login" component={Login} options={{ headerShown: false }} />
+          <Stack.Screen name="register" component={Register} options={{ headerShown: false }} />
+          <Stack.Screen name="dashboard" component={DrawerTab} options={{ headerShown: false }} />
+          <Stack.Screen name="ProfilePae" component={Profile} options={{ headerShown: false }} />
+          <Stack.Screen name="Cartpage" component={Cart} options={{ headerShown: false }} />
+          <Stack.Screen name="Menupage" component={Menu} options={{ headerShown: false }} />
+          <Stack.Screen name="CategoriesPage" component={CategoriesPage} options={{ headerShown: false }} />
+          <Stack.Screen name="SpecialPage" component={SpecialOfferPage} options={{ headerShown: false }} />
+          <Stack.Screen name='CheckFullCategory' component={CheckFullCategory} options={{ headerShown: false }} />
+          <Stack.Screen name='ProductDetails' component={SpecialProductsDetails} options={{ headerShown: false }} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </CartProvider>
 
   );
 }
