@@ -48,3 +48,7 @@ export function getDataItem(){
 export function getData(id) {
     return DATA.find((data) => (data.id == id));
 }
+
+export function getTitle(title){
+    return DATA.find((datatitle) => (datatitle.title == title));
+}

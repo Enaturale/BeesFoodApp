@@ -27,6 +27,7 @@ import 'react-native-gesture-handler'
 
 import { CartProvider } from './Components/Cart/CartContext';
 
+
 export default function App() {
   return (
     <CartProvider>
@@ -43,6 +44,8 @@ export default function App() {
           <Stack.Screen name="SpecialPage" component={SpecialOfferPage} options={{ headerShown: false }} />
           <Stack.Screen name='CheckFullCategory' component={CheckFullCategory} options={{ headerShown: false }} />
           <Stack.Screen name='ProductDetails' component={SpecialProductsDetails} options={{ headerShown: false }} />
+          <Stack.Screen name='Cart' component={Cart} options={{ headerShown: false }} />
+
         </Stack.Navigator>
       </NavigationContainer>
     </CartProvider>
