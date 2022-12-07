@@ -31,7 +31,8 @@ const Login = ({navigation}) => {
             navigation.navigate('dashboard');
 
         }).catch(error => {
-            console.log(error)
+            console.log(error.message);
+            alert(error.message)
         })
     }
 
@@ -55,9 +56,11 @@ const Login = ({navigation}) => {
 
     const gotoRegisterPage = () =>{
         return navigation.navigate('register')
-    }
+    }  
 
-   
+    const gotologinPage = () =>{
+        return navigation.navigate('dashboard')
+    } 
 
  
 
